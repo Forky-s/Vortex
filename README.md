@@ -157,7 +157,7 @@ You can also use the proxy's `attractTo()` method to make particles move towards
 One of the more advanced Vortex features is the ability create secondary particle systems – for each particle in one system to create a new particle system. This enables creation of multi-stage effects, such as fireworks: one particle launches upwards, setting off sparks as it flies, then exploding into color when it dies.
 
 > [!Important]
-> When creating particle systems with secondary systems inside, both the primary and secondary system can have their own set of tags. However, you must provide all tags from all systems when creating your `ParticleView`.
+> When creating particle systems with secondary systems inside, both the primary and secondary system can have their own set of tags. However, you must provide all tags from all systems when creating your `VortexView`.
 
 
 ## Creating custom particle systems
@@ -191,7 +191,7 @@ The `VortexSystem` initializer parameters are:
 - `attractionStrength` (`Double`, defaults to 0) determines how quickly to move towards or away from the point specified in `attractionCenter`.
 - `dampingFactor` (`Double`, defaults to 0) determines how quickly particles should lose momentum over time.
 - `angularSpeed` (`SIMD3<Double>`, defaults to `[0, 0, 0]`) determines how quickly particles should spin in X, Y, and Z axes. Note: watchOS supports only Z rotation.
-- `angularSpeedVariation` (`SIMD3<Double>`, defaults to `[0, 0, 0]` determines how much variation to allow in particle rotation speed, +/- the base `angularSpeed` value.
+- `angularSpeedVariation` (`SIMD3<Double>`, defaults to `[0, 0, 0]`) determines how much variation to allow in particle rotation speed, +/- the base `angularSpeed` value.
 - `colors` (`ColorMode`, defaults to `.single(.white)`) determines how particles should be colored over time.
 - `size` (`Double`, defaults to 1) determines how big particles should be compared to their source view, where 1 is 100% the original size.
 - `sizeVariation` (`Double`, defaults to 0) determines how much variation to allow in initial particle size, +/- the base `size` value.
@@ -378,7 +378,7 @@ VortexView(.spark) {
 
 ### Splash
 
-The `.splash` present contains raindrop splashes, as if rain were hitting the ground. This works best in combination with the `.rain` preset, like this:
+The `.splash` preset contains raindrop splashes, as if rain were hitting the ground. This works best in combination with the `.rain` preset, like this:
 
 ```swift
 ZStack {
